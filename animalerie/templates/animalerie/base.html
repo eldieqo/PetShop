@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <title>Bienvenue à l'animalerie </title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/animalerie.css' %}">
+    </head>
+
+    <body>
+        <div class="header">
+            <h1><img src="https://i.pinimg.com/originals/6d/7f/29/6d7f29434458fc51b4dec7029e951180.jpg" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="Pin by PN on anime | Cute hamsters, Cute animal drawings, Cute kawaii  animals" data-noaft="1" style="width: 165px; height: 161.25px; margin: 0px;"> Bienvenue à l'animalerie!</h1>
+        </div>
+            {% block content %}
+            {% endblock %}
+    </body>
+
+</html>

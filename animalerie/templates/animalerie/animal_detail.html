@@ -1,0 +1,43 @@
+{% extends 'animalerie/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="fakediv">
+    <form method="POST" class="post-form">{% csrf_token %}
+        <br>
+        <h6>Où voulez-vous envoyer votre bébé ?</h6>
+        <li><label for="id_lieu"></label> <select name="lieu" required="" id="id_lieu">
+            <option value="" selected="">---------</option>
+          
+            <option value="litière">litière</option>
+          
+            <option value="mangoire">mangoire</option>
+          
+            <option value="roue">roue</option>
+          
+            <option value="nid">nid</option>
+          
+          </select></li>
+    <button class="button button" type="submit">Envoier le au nouvelle lieu!</button>
+    <br>
+    {% if message == "Erreur... essayez à nouveau" %}
+        <div class="alert alert-danger" role="alert">
+            {{message}}
+        </div>
+    {% elif message == "Félicitations... votre modification a été fait avec success" %}
+        <div class="alert alert-success" role="alert">
+            {{message}}
+        </div>
+    {% endif %}
+    
+
+    <button class="button"><a href="{% url 'animal_list' %}">Ops, je me suis trompé. Je veux retourner a page de selection! </a></button>
+    </form>
+    <!--<img src="https://i.pinimg.com/474x/eb/cd/a6/ebcda67c2ea4df5c0a3cb7841cd27b61.jpg" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="Kho ảnh anime | Cute hamsters, Cute animals, Cute animal drawings" data-noaft="1" style="width: 415px; height: 553.333px; margin: 0px;"> -->
+    <img src="https://i.pinimg.com/736x/93/12/de/9312de0fb9f582e54cc6ee1cb8fca26a.jpg" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="Japanese Artist Paints Adorable Watercolours Of Pet Hamster Doing Human  Things | Hamster dibujo, Mascotas memes, Hamsters" data-noaft="1" style="width: 415px; height: 518.75px; margin: 0px;">
+    <img src="https://i.pinimg.com/736x/79/a5/93/79a593eb70a2604eeb130fbde803b771.jpg" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="Pin de NATSUKI (Neko-chan) em ANIME MANGA FANART | Desenhos de animais  fofinhos, Animais bonitos, Hamsters fofos" data-noaft="1" style="width: 415px; height: 518.75px; margin: 0px;">    <img src="https://i.pinimg.com/736x/10/84/9a/10849a5bbec7bcc2ea7d334369cc5c10.jpg" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="Pin by Isabella Maúlen on hámsters | Cute hamsters, Cute animal drawings,  Cute animals" data-noaft="1" style="width: 415px; height: 518.75px; margin: 0px;">
+    <img src="https://i.pinimg.com/originals/64/33/86/6433869ef972b167fb43cf74e0ad40aa.jpg" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="Pin de Peres en Gotte Hamster Painter | Dibujos bonitos de animales,  Dibujos kawaii de animales, Dibujos bonitos" data-noaft="1" style="width: 415px; height: 408.36px; margin: 0px;">
+    <!--<img itemprop="contentUrl" alt="Animales bonitos, dibujos animados, encantador, hámsters png" title="Animales bonitos, dibujos animados, encantador, hámsters png" src="https://w7.pngwing.com/pngs/950/435/png-transparent-cute-animals-cartoon-lovely-hamsters.png" oncontextmenu="return false;"> -->
+</div>
+ 
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'animalerie/base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="main">
+        <h6>Petites créatures en quête d'un foyer </h6>
+        <br>
+        <hr>
+        {% for animal in animals %}
+            <div class="main2">
+            <h3><button class="button button"><a href="{% url 'animal_detail' id_animal=animal.id_animal %}">{{ animal.id_animal }}<b> : </b></a></button></h3>
+            <h5><b>type:</b> <i>{{ animal.type }}</i></h5>
+            <h5><b>race:</b> <i>{{ animal.race |linebreaksbr }}</i></h5>
+            <h5><b>etat:</b> <i>{{ animal.etat |linebreaksbr }}</i></h5>
+            <h5><b>lieu:</b> <i>{{ animal.lieu |linebreaksbr }}</i><h5> 
+            </div>
+        {% endfor %}
+        <hr>
+    </div>
+    <div class="main">
+        <h6>Qu'est-ce qu'elles font maintenant ?</h6>
+        <br>
+        <hr>
+        {% for equip in equipement %}
+            <h3 style="background-color: #ee86c1c7;  color: white;border-radius: 18px; padding: 10px 30px; display: block; text-align: center;" >{{ equip.id_equip }}</h3>
+            {% if equip.disponibilite == 'libre' %}
+                <h4 style="color:green;"><b>  disponibilite: </b><i>{{ equip.disponibilite |linebreaksbr  }}</i></h4>
+            {% endif %}
+            {% if equip.disponibilite == 'occupé' %}
+                <h4 style="color:red;"><b>   disponibilite:   </b><i>{{ equip.disponibilite |linebreaksbr }}</i></h4>
+
+            {% endif %}
+        {% endfor %}
+        <hr>
+    </div>
+</div>
+{% endblock %}
+
